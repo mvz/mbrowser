@@ -7,8 +7,11 @@ require 'webkit2-gtk'
 Gtk.init
 
 win = Gtk::Window.new :toplevel
+vbox = Gtk::Box.new :vertical, 0
+win.add vbox
 wv = WebKit2Gtk::WebView.new
-win.add(wv)
+vbox.add wv
+wv.vexpand = true
 win.show_all
 wv.load_uri('http://www.google.com/')
 win.signal_connect('destroy') { Gtk.main_quit }
