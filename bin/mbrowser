@@ -13,6 +13,6 @@ wv = WebKit2Gtk::WebView.new
 vbox.add wv
 wv.vexpand = true
 win.show_all
-wv.load_uri('http://www.google.com/')
+wv.load_uri(ARGV[0])
 win.signal_connect('destroy') { Gtk.main_quit }
 Gtk.main
