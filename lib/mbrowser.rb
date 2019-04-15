@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "mbrowser/version"
+require 'mbrowser/version'
 
 module Mbrowser
   # Your code goes here...
