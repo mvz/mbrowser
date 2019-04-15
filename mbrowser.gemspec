@@ -11,8 +11,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Matijs van Zuijlen']
   spec.email         = ['matijs@matijs.net']
 
-  spec.summary       = %q{Minimalistic browser}
-  spec.description   = %q{A simple clean usable browser using WebKit2-Gtk}
+  spec.summary       = 'Minimalistic browser'
+  spec.description   = 'A simple clean usable browser using WebKit2-Gtk'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
