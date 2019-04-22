@@ -1,0 +1,43 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
+# Dot at end of line makes it clearer that the line is not done
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+# Multi-line assignment should be simply indented. Aligning them makes it even
+# harder to keep a sane line length.
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Allow if (foo = get_foo) style
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+# Allow and/or for control flow only
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+# Require at least two dependent lines before suggesting a guard clause
+Style/GuardClause:
+  MinBodyLength: 2
+
+# Sometimes an if statement just looks better than next with a guard clause
+Style/Next:
+  Enabled: false
+
+# Allow explicit return with multiple return values
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+
+# Always use raise to raise exceptions
+Style/SignalException:
+  EnforcedStyle: only_raise
+
+# I like to have symbols always look like symbols
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+# Accessors are only trivial if they match the ivar name
+Style/TrivialAccessors:
+  ExactNameMatch: true
