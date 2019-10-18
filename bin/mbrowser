@@ -15,6 +15,7 @@ wv = WebKit2::WebView.new
 vbox.add wv
 wv.vexpand = true
 win.show_all
-wv.load_uri(ARGV[0])
+uri = ARGV[0] or raise "URI required"
+wv.load_uri(uri)
 win.signal_connect('destroy') { Gtk.main_quit }
 Gtk.main
