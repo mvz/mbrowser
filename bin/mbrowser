@@ -3,14 +3,15 @@
 
 require 'mbrowser'
 
-require 'webkit2-gtk'
+require 'gir_ffi-gtk3'
 
+GirFFI.setup :WebKit2
 Gtk.init
 
 win = Gtk::Window.new :toplevel
 vbox = Gtk::Box.new :vertical, 0
 win.add vbox
-wv = WebKit2Gtk::WebView.new
+wv = WebKit2::WebView.new
 vbox.add wv
 wv.vexpand = true
 win.show_all
