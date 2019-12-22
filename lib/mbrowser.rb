@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'mbrowser/version'
+require "mbrowser/version"
 
 # Main code of the project will live under this namespace
 module Mbrowser

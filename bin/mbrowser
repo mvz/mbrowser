@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'mbrowser'
+require "mbrowser"
 
-require 'gir_ffi-gtk3'
+require "gir_ffi-gtk3"
 
 GirFFI.setup :WebKit2
 Gtk.init
@@ -17,5 +17,5 @@ wv.vexpand = true
 win.show_all
 uri = ARGV[0] or raise "URI required"
 wv.load_uri(uri)
-win.signal_connect('destroy') { Gtk.main_quit }
+win.signal_connect("destroy") { Gtk.main_quit }
 Gtk.main
