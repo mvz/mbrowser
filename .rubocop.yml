@@ -4,6 +4,10 @@ require:
 AllCops:
   TargetRubyVersion: 2.4
 
+# Require lines to fit in pull requests.
+Layout/LineLength:
+  Max: 92
+
 # Don't force lonely closing parentheses
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: same_line
@@ -25,10 +29,6 @@ Layout/SpaceBeforeBlockBraces:
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
-
-# Require lines to fit in pull requests.
-Metrics/LineLength:
-  Max: 92
 
 # Allow and/or for control flow only
 Style/AndOr:
