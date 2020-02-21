@@ -4,7 +4,7 @@ require:
 AllCops:
   TargetRubyVersion: 2.4
 
-# Require lines to fit in pull requests.
+# Be lenient with line length
 Layout/LineLength:
   Max: 92
 
@@ -26,6 +26,10 @@ Layout/MultilineOperationIndentation:
 Layout/SpaceBeforeBlockBraces:
   EnforcedStyleForEmptyBraces: space
 
+# Assume the programmer knows how bracketed block syntax works
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
@@ -38,9 +42,24 @@ Style/AndOr:
 Style/GuardClause:
   MinBodyLength: 2
 
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
 # Sometimes an if statement just looks better than next with a guard clause
 Style/Next:
   Enabled: false
+
+# Use older RuboCop default
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%W': ()
+    '%w': ()
 
 # Allow explicit return with multiple return values
 Style/RedundantReturn:
