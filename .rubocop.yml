@@ -1,4 +1,5 @@
 require:
+  - rubocop-packaging
   - rubocop-performance
 
 AllCops:
@@ -34,6 +35,10 @@ Lint/AmbiguousBlockAssociation:
 # Allow if (foo = get_foo) style
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
+
+Packaging/RelativeRequireToLib:
+  Exclude:
+    - "mbrowser.gemspec"
 
 Performance/StartWith:
   AutoCorrect: true

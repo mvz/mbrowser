@@ -1,28 +1,34 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("lib", __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "mbrowser/version"
+require "rake/file_list"
+require_relative "lib/mbrowser/version"
 
-Gem::Specification.new do |spec|
-  spec.name          = "mbrowser"
-  spec.version       = Mbrowser::VERSION
-  spec.authors       = ["Matijs van Zuijlen"]
-  spec.email         = ["matijs@matijs.net"]
+Gem::Specification.new do |s|
+  s.name = "mbrowser"
+  s.version = Mbrowser::VERSION
+  s.summary = "Minimalistic browser"
+  s.authors = ["Matijs van Zuijlen"]
+  s.email = ["matijs@matijs.net"]
 
-  spec.summary       = "Minimalistic browser"
-  spec.description   = "A simple clean usable browser using WebKit2-Gtk"
-  spec.license       = "MIT"
+  s.required_ruby_version = ">= 2.5.0"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir        = "bin"
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  s.license = "MIT"
 
-  spec.add_dependency "gir_ffi-gtk", "~> 0.15.0"
+  s.description = <<~DESC
+    A simple clean usable browser using WebKit2-Gtk
+  DESC
 
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  s.files = Rake::FileList["{bin,lib}/**/*", "LICENSE.txt"]
+    .exclude(*File.read(".gitignore").split)
+  s.rdoc_options = ["--main", "README.md"]
+  s.extra_rdoc_files = ["CODE_OF_CONDUCT.md"]
+  s.bindir = "bin"
+  s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+
+  s.add_runtime_dependency "gir_ffi-gtk", "~> 0.15.0"
+
+  s.add_development_dependency "rake", "~> 13.0"
+  s.add_development_dependency "rspec", "~> 3.0"
+
+  s.require_paths = ["lib"]
 end
