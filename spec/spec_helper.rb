@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "bundler/setup"
 require "mbrowser"
 
 RSpec.configure do |config|

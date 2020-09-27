@@ -36,10 +36,6 @@ Lint/AmbiguousBlockAssociation:
 Lint/AssignmentInCondition:
   AllowSafeAssignment: true
 
-Packaging/RelativeRequireToLib:
-  Exclude:
-    - "mbrowser.gemspec"
-
 Performance/StartWith:
   AutoCorrect: true
 
