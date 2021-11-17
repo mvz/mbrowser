@@ -6,17 +6,15 @@ require_relative "lib/mbrowser/version"
 Gem::Specification.new do |spec|
   spec.name = "mbrowser"
   spec.version = Mbrowser::VERSION
-  spec.summary = "Minimalistic browser"
   spec.authors = ["Matijs van Zuijlen"]
   spec.email = ["matijs@matijs.net"]
 
-  spec.required_ruby_version = ">= 2.6.0"
-
-  spec.license = "MIT"
-
+  spec.summary = "Minimalistic browser"
   spec.description = <<~DESC
     A simple clean usable browser using WebKit2-Gtk
   DESC
+  spec.license = "MIT"
+  spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["rubygems_mfa_required"] = "true"
 
