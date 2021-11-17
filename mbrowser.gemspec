@@ -18,6 +18,8 @@ Gem::Specification.new do |spec|
     A simple clean usable browser using WebKit2-Gtk
   DESC
 
+  spec.metadata["rubygems_mfa_required"] = "true"
+
   spec.files = Rake::FileList["{bin,lib}/**/*", "LICENSE.txt"]
     .exclude(*File.read(".gitignore").split)
   spec.rdoc_options = ["--main", "README.md"]
