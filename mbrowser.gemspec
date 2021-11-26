@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require "rake/file_list"
 require_relative "lib/mbrowser/version"
 
 Gem::Specification.new do |spec|
@@ -18,17 +17,17 @@ Gem::Specification.new do |spec|
 
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.files = Rake::FileList["{bin,lib}/**/*", "LICENSE.txt"]
-    .exclude(*File.read(".gitignore").split)
-  spec.rdoc_options = ["--main", "README.md"]
-  spec.extra_rdoc_files = ["CODE_OF_CONDUCT.md"]
+  spec.files = File.read("Manifest.txt").split
   spec.bindir = "bin"
   spec.executables = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
+
+  spec.rdoc_options = ["--main", "README.md"]
+  spec.extra_rdoc_files = ["CODE_OF_CONDUCT.md"]
 
   spec.add_runtime_dependency "gir_ffi-gtk", "~> 0.15.0"
 
   spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rake-manifest", "~> 0.2.0"
   spec.add_development_dependency "rspec", "~> 3.0"
-
-  spec.require_paths = ["lib"]
 end
