@@ -1,0 +1,6 @@
+bin/mbrowser
+lib/mbrowser.rb
+lib/mbrowser/version.rb
+LICENSE.txt
+CODE_OF_CONDUCT.md
+README.md
