@@ -6,6 +6,10 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
 
+# Put development dependencies in the gemspec so rubygems.org knows about them
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
+
 # Be lenient with line length
 Layout/LineLength:
   Max: 92
@@ -19,7 +23,7 @@ Layout/MultilineMethodCallBraceLayout:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-# Multi-line assignment should be simply indented. Aligning them makes it even
+# Multi-line assignments should be simply indented. Aligning them makes it even
 # harder to keep a sane line length.
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
