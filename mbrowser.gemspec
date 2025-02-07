@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.rdoc_options = ["--main", "README.md"]
   spec.extra_rdoc_files = ["CODE_OF_CONDUCT.md"]
 
-  spec.add_dependency "gir_ffi-gtk", "~> 0.17.0"
+  spec.add_dependency "gir_ffi-gtk", "~> 0.18.0"
 
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
